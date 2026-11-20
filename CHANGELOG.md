@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/gersonrs/modern-gitops-stack-module-metallb/compare/v2.8.0...v3.0.0) (2026-11-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* provider major bumps and a stricter Terraform baseline; consumers must run `terraform init -upgrade`.
+
+### 🚀 New Features
+
+* upgrade charts, providers and Terraform baseline ([#22](https://github.com/gersonrs/modern-gitops-stack-module-metallb/issues/22)) ([b9ae598](https://github.com/gersonrs/modern-gitops-stack-module-metallb/commit/b9ae5989b283021d56193629ae47dfaa1faad669))
+
 ## [2.8.0](https://github.com/GersonRS/modern-gitops-stack-module-metallb/compare/v2.7.1...v2.8.0) (2026-01-22)
 
 
