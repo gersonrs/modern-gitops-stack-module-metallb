@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/gersonrs/modern-gitops-stack-module-metallb/compare/v3.0.0...v3.0.1) (2026-11-24)
+
+
+### 📚 Documentation
+
+* add usage and dependencies to the module documentation ([#24](https://github.com/gersonrs/modern-gitops-stack-module-metallb/issues/24)) ([be31fc7](https://github.com/gersonrs/modern-gitops-stack-module-metallb/commit/be31fc725004b298b8d314ba7af7d591c95d49d7))
+
 ## [3.0.0](https://github.com/gersonrs/modern-gitops-stack-module-metallb/compare/v2.8.0...v3.0.0) (2026-11-20)
 
 
