@@ -1,6 +1,49 @@
 = modern-gitops-stack-module-metallb
-
+// Document attributes to replace along the document
 :metallb-chart-version: 0.16.2
+:original-repo-url: https://github.com/metallb/metallb
+
+A https://modern-gitops-stack.io[Modern GitOps Stack] module to deploy MetalLB, which provides LoadBalancer services on clusters that have no cloud load balancer.
+
+The metallb chart used by this module is shipped in this repository as well, in order to avoid any unwanted behaviors caused by unsupported versions.
+
+[cols="1,1,1",options="autowidth,header"]
+|===
+|Current Chart Version |Original Repository |Default Values
+|*0.16.2* |https://github.com/metallb/metallb/tree/main/charts/metallb[metallb] |https://artifacthub.io/packages/helm/metallb/metallb/0.16.2?modal=values[`values.yaml`]
+|===
+
+== Usage
+
+This module can be declared by adding the following block to your Terraform configuration:
+
+[source,terraform]
+----
+module "metallb" {
+  source = "git::https://github.com/GersonRS/modern-gitops-stack-module-metallb.git?ref=<RELEASE>"
+
+  cluster_name   = local.cluster_name
+  base_domain    = local.base_domain
+  subdomain      = local.subdomain
+  cluster_issuer = local.cluster_issuer
+  app_autosync   = local.app_autosync
+  subnet         = "172.19.0.0/16"
+
+  dependency_ids = {
+    kind = module.kind.id
+  }
+}
+----
+
+The application is deployed to the `metallb-system` namespace.
+
+== Technical Reference
+
+=== Dependencies
+
+==== `module.kind.id`
+
+MetalLB is only used on clusters without a cloud load balancer, such as KinD.
 
 // BEGIN_TF_DOCS
 === Requirements
